@@ -6,8 +6,9 @@
         <input
           type="number"
           class="w-full rounded-lg border border-gray-300 px-4 py-2 pr-28 text-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
-          v-model.number="sendAmount"
-          min="1"
+          v-model="sendAmount"
+          min="0"
+          @input="handleSendAmountChange"
         />
         <button
           @click="toggleSendDropdown"
@@ -16,8 +17,12 @@
           <img :src="selectedSendCurrency.flag" :alt="selectedSendCurrency.code" class="w-6 h-6 rounded-full" />
           <span class="font-semibold ml-1">{{ selectedSendCurrency.code }}</span>
           <!-- Dropdown icon toggles -->
-          <ChevronDownIcon v-if="!showSendDropdown" class="h-4 w-4 ml-1" />
-          <ChevronUpIcon v-else class="h-4 w-4 ml-1" />
+          <svg v-if="!showSendDropdown" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4 ml-1">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+          </svg>
+          <svg v-else xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4 ml-1">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+          </svg>
         </button>
         <div
           v-if="showSendDropdown"
@@ -50,8 +55,9 @@
         <input
           type="number"
           class="w-full rounded-lg border border-gray-300 px-4 py-2 pr-28 text-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
-          v-model.number="receiveAmount"
-          min="1"
+          v-model="receiveAmount"
+          min="0"
+          readonly
         />
         <button
           @click="toggleReceiveDropdown"
@@ -60,8 +66,12 @@
           <img :src="selectedReceiveCurrency.flag" :alt="selectedReceiveCurrency.code" class="w-6 h-6 rounded-full" />
           <span class="font-semibold ml-1">{{ selectedReceiveCurrency.code }}</span>
           <!-- Dropdown icon toggles -->
-          <ChevronDownIcon v-if="!showReceiveDropdown" class="h-4 w-4 ml-1" />
-          <ChevronUpIcon v-else class="h-4 w-4 ml-1" />
+          <svg v-if="!showReceiveDropdown" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4 ml-1">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+          </svg>
+          <svg v-else xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4 ml-1">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+          </svg>
         </button>
         <div
           v-if="showReceiveDropdown"
@@ -109,7 +119,6 @@
 
 <script setup>
 import { ref, computed, watch } from 'vue'
-import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/vue/24/outline'
 
 const currencies = [
   { code: 'VND', flag: 'https://flagcdn.com/vn.svg', rate: 0.04 },
@@ -121,8 +130,8 @@ const currencies = [
   { code: 'GBP', flag: 'https://flagcdn.com/gb.svg', rate: 1.25 },
 ]
 
-const sendAmount = ref(2500)
-const receiveAmount = ref(0)
+const sendAmount = ref('2500')
+const receiveAmount = ref('0')
 const fee = ref(0)
 const selectedSendCurrency = ref(currencies[0])
 const selectedReceiveCurrency = ref(currencies[1])
@@ -131,25 +140,46 @@ const showReceiveDropdown = ref(false)
 const sendSearch = ref('')
 const receiveSearch = ref('')
 
+const handleSendAmountChange = (event) => {
+  const value = event.target.value
+  if (value === '') {
+    sendAmount.value = ''
+    receiveAmount.value = '0'
+    fee.value = 0
+    return
+  }
+  const numValue = parseFloat(value)
+  if (!isNaN(numValue) && numValue >= 0) {
+    sendAmount.value = value
+  }
+}
+
 const exchangeRate = computed(() => {
-  const usd = sendAmount.value * selectedSendCurrency.value.rate
-  return selectedReceiveCurrency.value.rate === 0 ? 0 : usd / selectedReceiveCurrency.value.rate / sendAmount.value
+  const amount = parseFloat(sendAmount.value) || 0
+  const usd = amount * selectedSendCurrency.value.rate
+  return selectedReceiveCurrency.value.rate === 0 ? 0 : usd / selectedReceiveCurrency.value.rate / amount
 })
 
 const exchangeRateText = computed(() => {
+  if (!sendAmount.value) return `${selectedSendCurrency.value.code} → ${selectedReceiveCurrency.value.code}: 0.0000`
   return `${selectedSendCurrency.value.code} → ${selectedReceiveCurrency.value.code}: ${exchangeRate.value.toFixed(4)}`
 })
 
 const convertedAmount = computed(() => {
-  const usd = sendAmount.value * selectedSendCurrency.value.rate
+  const amount = parseFloat(sendAmount.value) || 0
+  const usd = amount * selectedSendCurrency.value.rate
   return selectedReceiveCurrency.value.rate === 0 ? 0 : usd / selectedReceiveCurrency.value.rate
 })
 
-const totalPayable = computed(() => sendAmount.value + fee.value)
+const totalPayable = computed(() => {
+  const amount = parseFloat(sendAmount.value) || 0
+  return amount + fee.value
+})
 
 watch([sendAmount, selectedSendCurrency, selectedReceiveCurrency], () => {
-  receiveAmount.value = convertedAmount.value
-  fee.value = sendAmount.value > 0 ? Math.max(0, 0.01 * sendAmount.value) : 0
+  const amount = parseFloat(sendAmount.value) || 0
+  receiveAmount.value = convertedAmount.value.toFixed(2)
+  fee.value = amount > 0 ? Math.max(0, 0.01 * amount) : 0
 })
 
 const filteredSendCurrencies = computed(() =>
