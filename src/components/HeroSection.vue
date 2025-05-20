@@ -1,9 +1,9 @@
 <template>
-  <section class="container mx-auto flex flex-col justify-center h-full  py-12 md:py-24">
+  <section class=" container mx-auto flex flex-col justify-center h-full   md:py-24">
     <span class="inline-block bg-blue-400/90 text-white font-semibold rounded-full px-6 py-2 mb-6 text-lg shadow-md w-max">Fast, Easy & Secure</span>
     <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
-      Send Money <span class="text-blue-600">Worldwide</span><br />
-      in <span class="text-blue-600">Real Time!</span>
+      Send Money <span class="text-[#0579D8]">Worldwide</span><br />
+      in <span class="text-[#0579D8]">Real Time!</span>
     </h1>
     <p class="text-gray-700 text-lg mb-8 max-w-xl">
       Support your loved ones effortlessly—FamRemit Money Transfer delivers your funds instantly, safely, and hassle-free.

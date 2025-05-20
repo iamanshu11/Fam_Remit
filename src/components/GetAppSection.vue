@@ -4,12 +4,15 @@
       <!-- Left: Text, QR, Badges -->
       <div class="flex-1 flex flex-col items-center md:items-start">
         <h2 class="text-4xl font-bold text-black  px-4 py-2 mb-4 text-center md:text-left">
-          Get the FamRemit app
+          Get the <span class="text-[#0579D8]">FamRemit app</span> 
         </h2>
         <div class="text-lg text-black  px-4 py-2 mb-8 text-center md:text-left max-w-md">
           Send money on the go with our secure and easy-to-use mobile app.<br />Available for iOS and Android devices.
         </div>
-        <img src="/src/assets/img/qr.png" alt="QR Code" class="w-28 h-28 mb-8" />
+        <div class="p-2 rounded-2xl border border-blue-200 mb-6">
+          <img src="/src/assets/img/qr.png" alt="QR Code" class="w-28 h-28" />
+        </div>
+        
         <div class="flex gap-4">
       <a href="#" class="block"><img src="/src/assets/img/appstore.png" alt="App Store" class="h-12 bg-black p-2 rounded-xl" /></a>
       <a href="#" class="block"><img src="/src/assets/img/googleplay.png" alt="Google Play" class="h-12 bg-black p-2 rounded-xl" /></a>
@@ -25,4 +28,4 @@
 
 <script setup>
 // No script needed
-</script> 
+</script>  

@@ -3,7 +3,7 @@
       <div class="container mx-auto flex flex-col items-center justify-center px-4">
         <div class="mb-2 text-center text-base font-semibold text-blue-900 tracking-widest">OUR REVIEWS</div>
         <h2 class="text-3xl md:text-4xl font-bold mb-2 text-center">
-          Happy <span class="text-blue-500">Customers Trust</span>
+          Happy <span class="text-[#0579D8]">Customers Trust</span>
         </h2>
         <h3 class="text-2xl md:text-3xl font-bold mb-10 text-center">Our Services</h3>
   

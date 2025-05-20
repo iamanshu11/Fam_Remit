@@ -3,8 +3,8 @@
     <div class="container mx-auto flex items-center justify-between py-2 px-6">
       <div class="flex items-center space-x-2">
         <!-- Logo Placeholder -->
-        <div class="w-12 h-12 flex items-center justify-center">
-          <img src="/src/assets/img/logo.png" alt="FamRemit Logo" class="w-12 h-12" />
+        <div class=" flex items-center justify-center">
+          <img src="/src/assets/img/logo.png" alt="FamRemit Logo" class="w-16 h-16" />
         </div>
       </div>
       <nav class="hidden md:flex items-center space-x-8">

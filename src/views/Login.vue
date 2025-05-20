@@ -40,9 +40,9 @@
           </div>
           <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg text-lg transition mb-4">Continue</button>
         </form>
-        <div class="text-center text-gray-500 mt-4">
+        <!-- <div class="text-center text-gray-500 mt-4">
           Don't have an account? <a href="#" class="text-blue-600 hover:underline font-medium">Sign up instead</a>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>

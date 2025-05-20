@@ -2,7 +2,7 @@
   <section class="w-full py-16 bg-white">
     <div class="container mx-auto flex flex-col items-center justify-center px-4">
       <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">
-        <span class="text-blue-500">Frequently</span> Asked<br />Questions
+        <span class="text-[#0579D8]">Frequently</span> Asked<br />Questions
       </h2>
       <div class="w-full max-w-3xl mx-auto flex flex-col gap-6">
         <div v-for="(faq, idx) in faqs" :key="faq.q" class="bg-white rounded-xl shadow-md px-6 py-5 flex items-center justify-between cursor-pointer transition hover:shadow-lg" @click="toggle(idx)">

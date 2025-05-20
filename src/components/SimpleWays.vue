@@ -2,7 +2,7 @@
     <section class="relative w-full min-h-[600px] flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-700 to-blue-400">
       <!-- Background image with overlay -->
       <img src="/src/assets/img/choose-fam-1.png" alt="Background" class="absolute inset-0 w-full h-full object-cover object-left md:object-center opacity-60 z-0" />
-      <div class="absolute inset-0 bg-gradient-to-r from-blue-900/80 to-blue-500/70 z-10"></div>
+      <div class="absolute inset-0 bg-gradient-to-b from-[#276FAA] via-transparent to-[#00174F] opacity-90 z-10"></div>
   
       <div class="relative z-20 container mx-auto flex flex-col md:flex-row items-center justify-center md:justify-between py-12 md:py-24 gap-8 min-h-[600px]">
         <div class="w-full md:w-2/3 lg:w-1/2 flex flex-col items-center md:items-end justify-center min-h-[400px] mx-auto">

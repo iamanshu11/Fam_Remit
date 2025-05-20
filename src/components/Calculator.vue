@@ -3,37 +3,91 @@
     <div class="mb-4">
       <label class="block text-gray-700 font-medium mb-1">You Send</label>
       <div class="relative flex items-center">
-        <input type="number" class="w-full rounded-lg border border-gray-300 px-4 py-2 pr-28 text-lg focus:outline-none focus:ring-2 focus:ring-blue-400" v-model.number="sendAmount" min="1" />
-        <button @click="showSendDropdown = !showSendDropdown" class="absolute right-2 top-1/2 -translate-y-1/2 flex items-center bg-white border border-gray-300 rounded-lg px-2 py-1">
+        <input
+          type="number"
+          class="w-full rounded-lg border border-gray-300 px-4 py-2 pr-28 text-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+          v-model.number="sendAmount"
+          min="1"
+        />
+        <button
+          @click="toggleSendDropdown"
+          class="absolute right-2 top-1/2 -translate-y-1/2 flex items-center bg-transparent rounded-lg px-2 py-1"
+        >
           <img :src="selectedSendCurrency.flag" :alt="selectedSendCurrency.code" class="w-6 h-6 rounded-full" />
           <span class="font-semibold ml-1">{{ selectedSendCurrency.code }}</span>
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
         </button>
-        <div v-if="showSendDropdown" class="absolute top-12 right-0 bg-white border rounded-lg shadow-lg z-20 w-40">
-          <div v-for="currency in currencies" :key="currency.code" @click="selectSendCurrency(currency)" class="flex items-center px-3 py-2 hover:bg-blue-100 cursor-pointer">
+        <div
+          v-if="showSendDropdown"
+          class="absolute top-12 right-0 bg-white border rounded-lg shadow-lg z-20 w-full max-h-60 overflow-auto"
+        >
+          <div class="p-2">
+            <input
+              v-model="sendSearch"
+              type="text"
+              placeholder="Search currency..."
+              class="w-full rounded border border-gray-300 px-3 py-1 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            />
+          </div>
+          <div
+            v-for="currency in filteredSendCurrencies"
+            :key="currency.code"
+            @click="selectSendCurrency(currency)"
+            class="flex items-center px-3 py-2 hover:bg-blue-100 cursor-pointer"
+          >
             <img :src="currency.flag" :alt="currency.code" class="w-5 h-5 rounded-full mr-2" />
             <span>{{ currency.code }}</span>
           </div>
         </div>
       </div>
     </div>
+
     <div class="mb-4">
       <label class="block text-gray-700 font-medium mb-1">Recipient Gets</label>
       <div class="relative flex items-center">
-        <input type="number" class="w-full rounded-lg border border-gray-300 px-4 py-2 pr-28 text-lg focus:outline-none focus:ring-2 focus:ring-blue-400" v-model.number="receiveAmount" min="1" />
-        <button @click="showReceiveDropdown = !showReceiveDropdown" class="absolute right-2 top-1/2 -translate-y-1/2 flex items-center bg-white border border-gray-300 rounded-lg px-2 py-1">
+        <input
+          type="number"
+          class="w-full rounded-lg border border-gray-300 px-4 py-2 pr-28 text-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+          v-model.number="receiveAmount"
+          min="1"
+        />
+        <button
+          @click="toggleReceiveDropdown"
+          class="absolute right-2 top-1/2 -translate-y-1/2 flex items-center bg-transparent rounded-lg px-2 py-1"
+        >
           <img :src="selectedReceiveCurrency.flag" :alt="selectedReceiveCurrency.code" class="w-6 h-6 rounded-full" />
           <span class="font-semibold ml-1">{{ selectedReceiveCurrency.code }}</span>
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
         </button>
-        <div v-if="showReceiveDropdown" class="absolute top-12 right-0 bg-white border rounded-lg shadow-lg z-20 w-40">
-          <div v-for="currency in currencies" :key="currency.code" @click="selectReceiveCurrency(currency)" class="flex items-center px-3 py-2 hover:bg-blue-100 cursor-pointer">
+        <div
+          v-if="showReceiveDropdown"
+          class="absolute top-12 right-0 bg-white border rounded-lg shadow-lg z-20 w-full max-h-60 overflow-auto"
+        >
+          <div class="p-2">
+            <input
+              v-model="receiveSearch"
+              type="text"
+              placeholder="Search currency..."
+              class="w-full rounded border border-gray-300 px-3 py-1 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            />
+          </div>
+          <div
+            v-for="currency in filteredReceiveCurrencies"
+            :key="currency.code"
+            @click="selectReceiveCurrency(currency)"
+            class="flex items-center px-3 py-2 hover:bg-blue-100 cursor-pointer"
+          >
             <img :src="currency.flag" :alt="currency.code" class="w-5 h-5 rounded-full mr-2" />
             <span>{{ currency.code }}</span>
           </div>
         </div>
       </div>
     </div>
+
     <div class="border-t border-gray-300 my-4"></div>
     <div class="space-y-2 text-gray-700 text-sm">
       <div class="flex justify-between items-center"><span>Transaction fees</span><span>$ {{ fee.toFixed(2) }}</span></div>
@@ -73,9 +127,10 @@ const selectedSendCurrency = ref(currencies[0])
 const selectedReceiveCurrency = ref(currencies[1])
 const showSendDropdown = ref(false)
 const showReceiveDropdown = ref(false)
+const sendSearch = ref('')
+const receiveSearch = ref('')
 
 const exchangeRate = computed(() => {
-  // Example: convert send currency to USD, then to receive currency
   const usd = sendAmount.value * selectedSendCurrency.value.rate
   return selectedReceiveCurrency.value.rate === 0 ? 0 : usd / selectedReceiveCurrency.value.rate / sendAmount.value
 })
@@ -85,7 +140,6 @@ const exchangeRateText = computed(() => {
 })
 
 const convertedAmount = computed(() => {
-  // Example: convert send currency to USD, then to receive currency
   const usd = sendAmount.value * selectedSendCurrency.value.rate
   return selectedReceiveCurrency.value.rate === 0 ? 0 : usd / selectedReceiveCurrency.value.rate
 })
@@ -93,17 +147,34 @@ const convertedAmount = computed(() => {
 const totalPayable = computed(() => sendAmount.value + fee.value)
 
 watch([sendAmount, selectedSendCurrency, selectedReceiveCurrency], () => {
-  // Update receiveAmount and fee dynamically
   receiveAmount.value = convertedAmount.value
   fee.value = sendAmount.value > 0 ? Math.max(0, 0.01 * sendAmount.value) : 0
 })
 
+const filteredSendCurrencies = computed(() =>
+  currencies.filter(c => c.code.toLowerCase().includes(sendSearch.value.toLowerCase()))
+)
+const filteredReceiveCurrencies = computed(() =>
+  currencies.filter(c => c.code.toLowerCase().includes(receiveSearch.value.toLowerCase()))
+)
+
+const toggleSendDropdown = () => {
+  showSendDropdown.value = !showSendDropdown.value
+  if (showSendDropdown.value) showReceiveDropdown.value = false
+}
+const toggleReceiveDropdown = () => {
+  showReceiveDropdown.value = !showReceiveDropdown.value
+  if (showReceiveDropdown.value) showSendDropdown.value = false
+}
+
 const selectSendCurrency = (currency) => {
   selectedSendCurrency.value = currency
   showSendDropdown.value = false
+  sendSearch.value = ''
 }
 const selectReceiveCurrency = (currency) => {
   selectedReceiveCurrency.value = currency
   showReceiveDropdown.value = false
+  receiveSearch.value = ''
 }
-</script> 
+</script>

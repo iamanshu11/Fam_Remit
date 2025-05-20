@@ -17,7 +17,7 @@
       <!-- Main content -->
       <div class="container mx-auto flex flex-col items-center justify-center px-4">
         <h2 class="text-3xl md:text-4xl font-bold mb-14 text-center">
-          <span class="text-blue-500">Send Money</span> in Just 4<br class="hidden md:inline" /> Easy <span class="text-blue-500">Steps!</span>
+          <span class="text-[#0579D8]">Send Money</span> in Just 4<br class="hidden md:inline" /> Easy <span class="text-[#0579D8]">Steps!</span>
         </h2>
   
         <div class="grid grid-cols-1 md:grid-cols-4 gap-4 w-full max-w-6xl mx-auto">
@@ -33,7 +33,7 @@
   
             <div class="relative z-10 flex flex-col items-center">
               <div class="mb-4">
-                <img :src="step.img" :alt="step.title" class="w-24 h-24 object-contain mx-auto" />
+                <img :src="step.img" :alt="step.title" class="object-contain mx-auto" />
               </div>
               <div class="text-lg font-semibold text-center text-gray-900">{{ step.title }}</div>
             </div>

@@ -3,7 +3,7 @@
         <div class="container mx-auto ">
             <div class="text-center">
                 <h2 class="text-3xl md:text-4xl font-bold mb-10 text-center w-full">
-                    Simple Ways to <span class="text-blue-500">Receive Money</span>
+                    Simple Ways to <span class="text-[#0579D8]">Receive Money</span>
                 </h2>
             </div>
 
@@ -11,7 +11,7 @@
                 <!-- Left: Phone Image -->
                 <div class="flex-1 flex justify-center items-center md:justify-start md:items-center mb-8 md:mb-0">
                     <img src="/src/assets/img/simple-way.png" alt="Send Money App"
-                        class="max-w-xs md:max-w-sm w-full drop-shadow-2xl" />
+                        class="max-w-xs md:max-w-lg w-full drop-shadow-2xl" />
                 </div>
                 <!-- Right: Headline and Grid -->
                 <div class="flex-1 flex flex-col items-center w-full">
