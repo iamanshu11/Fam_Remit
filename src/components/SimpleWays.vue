@@ -1,5 +1,5 @@
 <template>
-    <section class="relative w-full min-h-[600px] flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-700 to-blue-400">
+    <section id="about" class="relative w-full min-h-[600px] flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-700 to-blue-400">
       <!-- Background image with overlay -->
       <img src="/src/assets/img/choose-fam-1.png" alt="Background" class="absolute inset-0 w-full h-full object-cover object-left md:object-center opacity-60 z-0" />
       <div class="absolute inset-0 bg-gradient-to-b from-[#276FAA] via-transparent to-[#00174F] opacity-90 z-10"></div>

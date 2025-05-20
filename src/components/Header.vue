@@ -2,42 +2,51 @@
   <header class="w-full bg-white shadow-sm">
     <div class="container mx-auto flex items-center justify-between py-2 px-6">
       <div class="flex items-center space-x-2">
-        <!-- Logo Placeholder -->
-        <div class=" flex items-center justify-center">
+        <router-link to="/">
           <img src="/src/assets/img/logo.png" alt="FamRemit Logo" class="w-16 h-16" />
-        </div>
+        </router-link>
       </div>
       <nav class="hidden md:flex items-center space-x-8">
-        <a href="#" class="text-blue-600 font-medium">Home</a>
-        <a href="#" class="text-gray-600 hover:text-blue-600">About</a>
-        <a href="#" class="text-gray-600 hover:text-blue-600">Contact</a>
-        <router-link to="/login" class="px-5 py-1 rounded-full border border-blue-500 text-blue-600 font-medium hover:bg-blue-50 transition">Login</router-link>
-        <!-- <button class="px-5 py-1 rounded-full bg-blue-500 text-white font-medium hover:bg-blue-600 transition">SignUp</button> -->
+        <router-link to="/" class="text-blue-600 font-medium">Home</router-link>
+        <!-- <router-link to="" class="text-gray-600 hover:text-blue-600">About</router-link>
+        <router-link to="" class="text-gray-600 hover:text-blue-600">Contact</router-link> -->
+        <router-link to="/signup" class="px-5 py-1 rounded-full border border-blue-500 text-blue-600 font-medium hover:bg-blue-50 transition">Sign up</router-link>
       </nav>
       <!-- Mobile menu button -->
       <div class="md:hidden flex items-center">
         <button @click="toggleMenu" class="focus:outline-none">
-          <svg class="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M4 6h16M4 12h16M4 18h16" />
+          <svg v-if="!menuOpen" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7 text-blue-600">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+          <svg v-else xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7 text-blue-600">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
       </div>
     </div>
+
     <!-- Mobile menu -->
-    <div v-if="menuOpen" class="absolute top-16 left-0 w-full bg-white shadow-md flex flex-col items-center space-y-4 py-4 md:hidden z-50">
-      <a href="#" class="text-blue-600 font-medium">Home</a>
-      <a href="#" class="text-gray-600 hover:text-blue-600">About</a>
-      <a href="#" class="text-gray-600 hover:text-blue-600">Contact</a>
-      <router-link to="/login" class="px-5 py-1 rounded-full border border-blue-500 text-blue-600 font-medium hover:bg-blue-50 transition">Login</router-link>
-      <!-- <button class="px-5 py-1 rounded-full bg-blue-500 text-white font-medium hover:bg-blue-600 transition">SignUp</button> -->
+    <div v-if="menuOpen" class="absolute top-20 left-0 w-full bg-white shadow-md flex flex-col items-center space-y-4 py-4 md:hidden z-50">
+      <router-link to="/" class="text-blue-600 font-medium">Home</router-link>
+      <!-- <router-link to="" class="text-gray-600 hover:text-blue-600">About</router-link>
+      <router-link to="" class="text-gray-600 hover:text-blue-600">Contact</router-link> -->
+      <router-link to="/signup" class="px-5 py-1 rounded-full border border-blue-500 text-blue-600 font-medium hover:bg-blue-50 transition">Sign up</router-link>
     </div>
   </header>
 </template>
 
 <script setup>
 import { ref } from 'vue'
+
 const menuOpen = ref(false)
 const toggleMenu = () => {
   menuOpen.value = !menuOpen.value
 }
-</script> 
+</script>
+
+<style scoped>
+.router-link-active {
+  color: #2563eb; /* blue-600 */
+  font-weight: 500;
+}
+</style>
