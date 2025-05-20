@@ -15,9 +15,9 @@
         >
           <img :src="selectedSendCurrency.flag" :alt="selectedSendCurrency.code" class="w-6 h-6 rounded-full" />
           <span class="font-semibold ml-1">{{ selectedSendCurrency.code }}</span>
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-          </svg>
+          <!-- Dropdown icon toggles -->
+          <ChevronDownIcon v-if="!showSendDropdown" class="h-4 w-4 ml-1" />
+          <ChevronUpIcon v-else class="h-4 w-4 ml-1" />
         </button>
         <div
           v-if="showSendDropdown"
@@ -59,9 +59,9 @@
         >
           <img :src="selectedReceiveCurrency.flag" :alt="selectedReceiveCurrency.code" class="w-6 h-6 rounded-full" />
           <span class="font-semibold ml-1">{{ selectedReceiveCurrency.code }}</span>
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-          </svg>
+          <!-- Dropdown icon toggles -->
+          <ChevronDownIcon v-if="!showReceiveDropdown" class="h-4 w-4 ml-1" />
+          <ChevronUpIcon v-else class="h-4 w-4 ml-1" />
         </button>
         <div
           v-if="showReceiveDropdown"
@@ -109,6 +109,7 @@
 
 <script setup>
 import { ref, computed, watch } from 'vue'
+import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/vue/24/outline'
 
 const currencies = [
   { code: 'VND', flag: 'https://flagcdn.com/vn.svg', rate: 0.04 },
