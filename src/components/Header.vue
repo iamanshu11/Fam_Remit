@@ -3,7 +3,7 @@
     <div class="container mx-auto flex items-center justify-between py-2 px-6">
       <div class="flex items-center space-x-2">
         <router-link to="/">
-          <img src="/src/assets/img/logo.png" alt="FamRemit Logo" class="w-16 h-16" />
+          <img src="/src/assets/img/logo.png" alt="FamRemit Logo" class="w-20 h-16" />
         </router-link>
       </div>
       <nav class="hidden md:flex items-center space-x-8">

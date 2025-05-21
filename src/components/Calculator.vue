@@ -1,11 +1,11 @@
 <template>
-  <div class="bg-gray-100 rounded-2xl shadow-lg px-6 p-6 md:p-8 w-full max-w-md border border-blue-200 relative z-10">
+  <div class="bg-[#D9D9D9]  rounded-2xl shadow-lg px-6 p-6 md:p-8 w-full max-w-md border border-blue-200 relative z-10">
     <div class="mb-4">
       <label class="block text-gray-700 font-medium mb-1">You Send</label>
       <div class="relative flex items-center">
         <input
           type="number"
-          class="w-full rounded-lg border border-gray-300 px-4 py-2 pr-28 text-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+          class="w-full rounded-lg bg-white border border-gray-300 px-4 py-2 pr-28 text-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
           v-model="sendAmount"
           min="0"
           @input="handleSendAmountChange"
@@ -54,7 +54,7 @@
       <div class="relative flex items-center">
         <input
           type="number"
-          class="w-full rounded-lg border border-gray-300 px-4 py-2 pr-28 text-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+          class="w-full rounded-lg bg-white border border-gray-300 px-4 py-2 pr-28 text-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
           v-model="receiveAmount"
           min="0"
           readonly
@@ -100,15 +100,15 @@
 
     <div class="border-t border-gray-300 my-4"></div>
     <div class="space-y-2 text-gray-700 text-sm">
-      <div class="flex justify-between items-center"><span>Transaction fees</span><span>$ {{ fee.toFixed(2) }}</span></div>
+      <div class="flex justify-between items-center text-[#01133F]"><span>Transaction fees</span><span>$ {{ fee.toFixed(2) }}</span></div>
       <div class="border-b border-gray-200 my-2"></div>
-      <div class="flex justify-between items-center"><span>Converted amount</span><span>$ {{ convertedAmount.toFixed(2) }}</span></div>
+      <div class="flex justify-between items-center text-[#01133F]"><span>Converted amount</span><span>$ {{ convertedAmount.toFixed(2) }}</span></div>
       <div class="border-b border-gray-200 my-2"></div>
-      <div class="flex justify-between items-center"><span>Exchange rate</span><span>{{ exchangeRateText }}</span></div>
+      <div class="flex justify-between items-center text-[#01133F]"><span>Exchange rate</span><span>{{ exchangeRateText }}</span></div>
       <div class="border-b border-gray-200 my-2"></div>
-      <div class="flex justify-between font-bold text-gray-900 mt-2 items-center"><span>Total Payable</span><span>$ {{ totalPayable.toFixed(2) }}</span></div>
+      <div class="flex justify-between font-bold text-[#01133F] mt-2 items-center"><span>Total Payable</span><span>$ {{ totalPayable.toFixed(2) }}</span></div>
     </div>
-    <button class="w-full mt-6 bg-blue-900 text-white font-semibold py-3 rounded-lg text-lg hover:bg-blue-800 transition">Get Started</button>
+    <button class="w-full mt-6 bg-[#00174F] text-white font-semibold py-3 rounded-lg text-lg hover:bg-blue-800 transition">Get Started</button>
     <div class="text-xs text-gray-500 mt-2 text-center">By clicking continue, you agree to our Terms and Conditions.</div>
     <div class="flex justify-center gap-6 mt-4 opacity-60">
       <img src="/src/assets/img/form-partner-1.png" alt="Bank Transfer" class="h-5" />

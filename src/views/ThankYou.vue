@@ -55,7 +55,7 @@
   
         <!-- CTA Buttons -->
         <div class="flex space-x-4 animate-fadeInUp delay-600">
-          <router-link to="/" class="bg-blue-900 hover:bg-blue-800 text-white font-semibold px-6 py-3 rounded-lg transition">
+          <router-link to="/" class="bg-[#00174F] hover:bg-blue-800 text-white font-semibold px-6 py-3 rounded-lg transition">
             Back to Home
           </router-link>
           <!-- <a href="#" class="bg-white hover:bg-gray-100 text-blue-900 font-semibold px-6 py-3 rounded-lg transition">

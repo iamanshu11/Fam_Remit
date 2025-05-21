@@ -98,7 +98,7 @@
 
           <button 
             type="submit" 
-            class="w-full bg-blue-900 hover:bg-blue-800 text-white font-semibold py-3 rounded-lg text-lg transition mt-4 "
+            class="w-full bg-[#00174F] hover:bg-blue-800 text-white font-semibold py-3 rounded-lg text-lg transition mt-4 "
           >
             Sign Up
           </button>
