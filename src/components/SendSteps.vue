@@ -1,7 +1,7 @@
 <template>
     <section class="relative w-full py-16 bg-white overflow-hidden">
       <!-- Decorative background images -->
-      <div class="absolute top-20">
+      <div class="hidden md:block absolute top-20">
         <img :src="leftBg" class="w-full h-full" />
       </div>
       <div class="absolute bottom-12 right-0">
