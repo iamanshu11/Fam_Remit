@@ -7,10 +7,10 @@
         </router-link>
       </div>
       <nav class="hidden md:flex items-center space-x-8">
-        <router-link to="/" class="text-blue-600 font-medium">Home</router-link>
+        <router-link to="/" class="text-[#0579D8]  font-medium">Home</router-link>
         <!-- <router-link to="" class="text-gray-600 hover:text-blue-600">About</router-link>
         <router-link to="" class="text-gray-600 hover:text-blue-600">Contact</router-link> -->
-        <router-link to="/signup" class="px-5 py-1 rounded-full border border-blue-500 text-blue-600 font-medium hover:bg-blue-50 transition">Sign up</router-link>
+        <router-link to="/signup" class="px-5 py-1 rounded-full border border-[#0579D8] text-[#0579D8] font-medium hover:bg-blue-50 transition">Sign up</router-link>
       </nav>
       <!-- Mobile menu button -->
       <div class="md:hidden flex items-center">
@@ -27,10 +27,10 @@
 
     <!-- Mobile menu -->
     <div v-if="menuOpen" class="absolute top-20 left-0 w-full bg-white shadow-md flex flex-col items-center space-y-4 py-4 md:hidden z-50">
-      <router-link to="/" class="text-blue-600 font-medium">Home</router-link>
+      <router-link to="/" class="text-[#0579D8] font-medium">Home</router-link>
       <!-- <router-link to="" class="text-gray-600 hover:text-blue-600">About</router-link>
       <router-link to="" class="text-gray-600 hover:text-blue-600">Contact</router-link> -->
-      <router-link to="/signup" class="px-5 py-1 rounded-full border border-blue-500 text-blue-600 font-medium hover:bg-blue-50 transition">Sign up</router-link>
+      <router-link to="/signup" class="px-5 py-1 rounded-full border border-[#0579D8] text-[#0579D8] font-medium hover:bg-blue-50 transition">Sign up</router-link>
     </div>
   </header>
 </template>
@@ -46,7 +46,7 @@ const toggleMenu = () => {
 
 <style scoped>
 .router-link-active {
-  color: #2563eb; /* blue-600 */
+  color: #0579D8; /* blue-600 */
   font-weight: 500;
 }
 </style>

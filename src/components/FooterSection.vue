@@ -15,7 +15,7 @@
       </div>
 
       <!-- Menu -->
-      <div class="flex-1 min-w-[150px]">
+      <!-- <div class="flex-1 min-w-[150px]">
         <div class="font-bold mb-3">Menu</div>
         <ul class="space-y-2">
           <li class="flex items-center">
@@ -34,7 +34,7 @@
             
           </li>
         </ul>
-      </div>
+      </div> -->
 
       <!-- Legals -->
       <div class="flex-1 min-w-[180px]">

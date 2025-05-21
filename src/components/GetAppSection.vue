@@ -1,6 +1,6 @@
 <template>
   <section class="w-full py-16 bg-white">
-    <div class="container mx-auto max-w-6xl flex flex-col md:flex-row bg-blue-200 rounded-2xl items-center justify-between gap-12 px-4 py-4 md:px-8 md:py-10">
+    <div class="container mx-auto max-w-6xl flex flex-col md:flex-row   items-center justify-between gap-12 px-4 py-4 md:px-8 md:py-10">
       <!-- Left: Text, QR, Badges -->
       <div class="flex-1 flex flex-col items-center md:items-start">
         <h2 class="text-3xl md:text-4xl font-bold text-black  px-4 py-2 mb-4 text-center md:text-left">

@@ -5,27 +5,40 @@
       <img src="/src/assets/img/login.png" alt="Login Background" class="w-full h-full object-cover" />
     </div>
     <!-- Right: Signup Form -->
-    <div class="flex-1 flex items-center justify-center bg-white h-screen overflow-y-auto">
+    <div class="relative flex-1 flex items-center justify-center bg-white h-screen overflow-y-auto">
+      <!-- Back Button -->
+      <button
+        @click="router.back()"
+        class="absolute top-4 right-4 p-2 bg-white rounded-full shadow hover:bg-gray-100 transition"
+        aria-label="Go Back"
+      > 
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
+
       <div class="w-full max-w-lg mx-auto p-8">
         <div class="flex flex-col items-center mb-2">
           <img src="/src/assets/img/logo.png" alt="FamRemit Logo" class="w-20 h-16 mb-2" />
         </div>
         <h2 class="text-lg md:text-2xl font-bold mb-2 text-center">Simpler, Faster Money Transfers Are Coming!</h2>
-        <div class="text-gray-400 text-sm md:text-lg text-center mb-8">Sign up and enjoy special offers and perks reserved only for our early supporters.</div>
+        <div class="text-gray-400 text-sm md:text-lg text-center mb-8">
+          Sign up and enjoy special offers and perks reserved only for our early supporters.
+        </div>
         
         <form 
-          action='https://forms.zohopublic.in/remitso263/form/FamRemit/formperma/DfMboqDLheOc56zSC-6LVuL8OJjG6rOUSN-hT2dqYMc/htmlRecords/submit' 
-          name='form' 
-          id='form' 
-          method='POST' 
-          accept-charset='UTF-8' 
-          enctype='multipart/form-data'
+          action="https://forms.zohopublic.in/remitso263/form/FamRemit/formperma/DfMboqDLheOc56zSC-6LVuL8OJjG6rOUSN-hT2dqYMc/htmlRecords/submit" 
+          name="form" 
+          id="form" 
+          method="POST" 
+          accept-charset="UTF-8" 
+          enctype="multipart/form-data"
           class="space-y-4"
           @submit="handleSubmit"
         >
-          <input type="hidden" name="zf_referrer_name" value="">
-          <input type="hidden" name="zf_redirect_url" value="/thank-you">
-          <input type="hidden" name="zc_gad" value="">
+          <input type="hidden" name="zf_referrer_name" value="" />
+          <input type="hidden" name="zf_redirect_url" value="/thank-you" />
+          <input type="hidden" name="zc_gad" value="" />
 
           <!-- Name Fields Grid -->
           <div class="grid grid-cols-2 md:grid-cols-2 gap-4">
@@ -64,7 +77,9 @@
 
           <!-- Email -->
           <div>
-            <label class="block text-gray-700 font-semibold mb-1">Email <span class="text-red-500">*</span></label>
+            <label class="block text-gray-700 font-semibold mb-1">
+              Email <span class="text-red-500">*</span>
+            </label>
             <div class="relative">
               <input 
                 type="email" 
@@ -80,7 +95,9 @@
 
           <!-- Phone -->
           <div>
-            <label class="block text-gray-700 font-semibold mb-1">Phone Number <span class="text-red-500">*</span></label>
+            <label class="block text-gray-700 font-semibold mb-1">
+              Phone Number <span class="text-red-500">*</span>
+            </label>
             <div class="relative">
               <input 
                 type="tel" 
@@ -98,7 +115,7 @@
 
           <button 
             type="submit" 
-            class="w-full bg-[#00174F] hover:bg-blue-800 text-white font-semibold py-3 rounded-lg text-lg transition mt-4 "
+            class="w-full bg-[#00174F] hover:bg-blue-800 text-white font-semibold py-3 rounded-lg text-lg transition mt-4"
           >
             Sign Up
           </button>
