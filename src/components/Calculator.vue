@@ -47,7 +47,7 @@
         </button>
         <div
           v-if="showSendDropdown"
-          class="absolute top-12 right-0 bg-white border rounded-lg shadow-lg z-20 w-full max-h-60 overflow-auto"
+          class="absolute top-12 right-0 bg-white border border-gray-400 rounded-lg shadow-lg z-20 w-full max-h-60 overflow-auto"
         >
           <div class="p-2">
             <input
@@ -61,7 +61,7 @@
             v-for="currency in filteredSendCurrencies"
             :key="currency.code"
             @click="selectSendCurrency(currency)"
-            class="flex items-center px-3 py-2 hover:bg-blue-100 cursor-pointer border-b border-gray-200 last:border-b-0"
+            class="flex items-center px-3 py-2 hover:bg-blue-100 cursor-pointer border-b border-gray-400 last:border-b-0"
           >
             <img
               :src="currency.flag"
@@ -120,7 +120,7 @@
         </button>
         <div
           v-if="showReceiveDropdown"
-          class="absolute top-12 right-0 bg-white border rounded-lg shadow-lg z-20 w-full max-h-60 overflow-auto"
+          class="absolute top-12 right-0 bg-white border border-gray-400 rounded-lg shadow-lg z-20 w-full max-h-60 overflow-auto"
         >
           <div class="p-2">
             <input
@@ -134,7 +134,7 @@
             v-for="currency in filteredReceiveCurrencies"
             :key="currency.code"
             @click="selectReceiveCurrency(currency)"
-            class="flex items-center px-3 py-2 hover:bg-blue-100 cursor-pointer border-b border-gray-200 last:border-b-0"
+            class="flex items-center px-3 py-2 hover:bg-blue-100 cursor-pointer border-b border-gray-400 last:border-b-0"
           >
             <img
               :src="currency.flag"
