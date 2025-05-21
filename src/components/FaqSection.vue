@@ -5,7 +5,7 @@
         <span class="text-[#0579D8]">Frequently</span> Asked<br />Questions
       </h2>
       <div class="w-full max-w-3xl mx-auto flex flex-col gap-6">
-        <div v-for="(faq, idx) in faqs" :key="faq.q" class="bg-white rounded-xl shadow-md px-6 py-5 flex items-center justify-between cursor-pointer transition hover:shadow-lg" @click="toggle(idx)">
+        <div v-for="(faq, idx) in faqs" :key="faq.q" class="bg-white rounded-xl shadow-md px-6 py-5 flex  justify-between cursor-pointer transition hover:shadow-lg" @click="toggle(idx)">
           <div class="flex-1">
             <div class="font-semibold text-lg">{{ faq.q }}</div>
             <transition name="fade">
