@@ -3,7 +3,7 @@
     <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between gap-12">
       <!-- Logo, Description, Social -->
       <div class="flex-1 min-w-[220px] flex flex-col items-center md:items-start">
-        <img src="/src/assets/img/logo.png" alt="FamRemit Logo" class="w-16 h-16 mb-2" />
+        <img src="/src/assets/img/logo.png" alt="FamRemit Logo" class="w-20 h-16 mb-2" />
         <p class="mb-4 text-sm text-white/90 max-w-xs">
           FamRemit Money Transfer has become the leading provider of money remittance services in Eritrea and beyond.
         </p>

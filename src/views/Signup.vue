@@ -8,7 +8,7 @@
     <div class="flex-1 flex items-center justify-center bg-white h-screen overflow-y-auto">
       <div class="w-full max-w-lg mx-auto p-8">
         <div class="flex flex-col items-center mb-2">
-          <img src="/src/assets/img/logo.png" alt="FamRemit Logo" class="w-20 h-20 mb-2" />
+          <img src="/src/assets/img/logo.png" alt="FamRemit Logo" class="w-20 h-16 mb-2" />
         </div>
         <h2 class="text-lg md:text-2xl font-bold mb-2 text-center">Simpler, Faster Money Transfers Are Coming!</h2>
         <div class="text-gray-400 text-sm md:text-lg text-center mb-8">Sign up and enjoy special offers and perks reserved only for our early supporters.</div>

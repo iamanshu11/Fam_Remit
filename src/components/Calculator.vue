@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-[#D9D9D9]  rounded-2xl shadow-lg px-6 p-6 md:p-8 w-full max-w-md border border-blue-200 relative z-10">
+  <div class="bg-[#D9D9D9] rounded-2xl shadow-lg px-6 p-6 md:p-8 w-full max-w-md border border-blue-200 relative z-10">
     <div class="mb-4">
       <label class="block text-gray-700 font-medium mb-1">You Send</label>
       <div class="relative flex items-center">
@@ -17,10 +17,26 @@
           <img :src="selectedSendCurrency.flag" :alt="selectedSendCurrency.code" class="w-6 h-6 rounded-full" />
           <span class="font-semibold ml-1">{{ selectedSendCurrency.code }}</span>
           <!-- Dropdown icon toggles -->
-          <svg v-if="!showSendDropdown" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4 ml-1">
+          <svg
+            v-if="!showSendDropdown"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="h-4 w-4 ml-1"
+          >
             <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
           </svg>
-          <svg v-else xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4 ml-1">
+          <svg
+            v-else
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="h-4 w-4 ml-1"
+          >
             <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
           </svg>
         </button>
@@ -40,10 +56,10 @@
             v-for="currency in filteredSendCurrencies"
             :key="currency.code"
             @click="selectSendCurrency(currency)"
-            class="flex items-center px-3 py-2 hover:bg-blue-100 cursor-pointer"
+            class="flex items-center px-3 py-2 hover:bg-blue-100 cursor-pointer border-b border-gray-200 last:border-b-0"
           >
             <img :src="currency.flag" :alt="currency.code" class="w-5 h-5 rounded-full mr-2" />
-            <span>{{ currency.code }}</span>
+            <span>{{ currency.code }} – {{ currency.name }}</span>
           </div>
         </div>
       </div>
@@ -66,10 +82,26 @@
           <img :src="selectedReceiveCurrency.flag" :alt="selectedReceiveCurrency.code" class="w-6 h-6 rounded-full" />
           <span class="font-semibold ml-1">{{ selectedReceiveCurrency.code }}</span>
           <!-- Dropdown icon toggles -->
-          <svg v-if="!showReceiveDropdown" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4 ml-1">
+          <svg
+            v-if="!showReceiveDropdown"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="h-4 w-4 ml-1"
+          >
             <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
           </svg>
-          <svg v-else xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4 ml-1">
+          <svg
+            v-else
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="h-4 w-4 ml-1"
+          >
             <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
           </svg>
         </button>
@@ -89,10 +121,10 @@
             v-for="currency in filteredReceiveCurrencies"
             :key="currency.code"
             @click="selectReceiveCurrency(currency)"
-            class="flex items-center px-3 py-2 hover:bg-blue-100 cursor-pointer"
+            class="flex items-center px-3 py-2 hover:bg-blue-100 cursor-pointer border-b border-gray-200 last:border-b-0"
           >
             <img :src="currency.flag" :alt="currency.code" class="w-5 h-5 rounded-full mr-2" />
-            <span>{{ currency.code }}</span>
+            <span>{{ currency.code }} – {{ currency.name }}</span>
           </div>
         </div>
       </div>
@@ -121,13 +153,13 @@
 import { ref, computed, watch } from 'vue'
 
 const currencies = [
-  { code: 'VND', flag: 'https://flagcdn.com/vn.svg', rate: 0.04 },
-  { code: 'MYR', flag: 'https://flagcdn.com/my.svg', rate: 0.41 },
-  { code: 'USD', flag: 'https://flagcdn.com/us.svg', rate: 1 },
-  { code: 'INR', flag: 'https://flagcdn.com/in.svg', rate: 0.012 },
-  { code: 'EUR', flag: 'https://flagcdn.com/eu.svg', rate: 1.1 },
-  { code: 'NGN', flag: 'https://flagcdn.com/ng.svg', rate: 0.001 },
-  { code: 'GBP', flag: 'https://flagcdn.com/gb.svg', rate: 1.25 },
+  { code: 'VND', name: 'Vietnamese Dong', flag: 'https://flagcdn.com/vn.svg', rate: 0.04 },
+  { code: 'MYR', name: 'Malaysian Ringgit', flag: 'https://flagcdn.com/my.svg', rate: 0.41 },
+  { code: 'USD', name: 'United States Dollar', flag: 'https://flagcdn.com/us.svg', rate: 1 },
+  { code: 'INR', name: 'Indian Rupee', flag: 'https://flagcdn.com/in.svg', rate: 0.012 },
+  { code: 'EUR', name: 'Euro', flag: 'https://flagcdn.com/eu.svg', rate: 1.1 },
+  { code: 'NGN', name: 'Nigerian Naira', flag: 'https://flagcdn.com/ng.svg', rate: 0.001 },
+  { code: 'GBP', name: 'British Pound Sterling', flag: 'https://flagcdn.com/gb.svg', rate: 1.25 },
 ]
 
 const sendAmount = ref('2500')
