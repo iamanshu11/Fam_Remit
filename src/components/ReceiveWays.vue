@@ -117,10 +117,24 @@
                 </div>
             </div>
 
+            <div class="flex items-center">
+                <button @click="showForm = true" class="cursor-pointer w-full max-w-md mx-auto text-center mt-6 bg-[#00174F] text-white font-semibold py-3 rounded-lg text-lg hover:bg-blue-800 transition">
+                    Join The Waitlist
+                </button>
+
+            </div>
+
+            
+
         </div>
+        <ZohoFormPopup :is-open="showForm" @close="showForm = false" />
     </section>
 </template>
 
 <script setup>
-// No script needed
+import { ref, computed } from 'vue'
+
+import ZohoFormPopup from './ZohoFormPopup.vue'
+
+const showForm = ref(false)
 </script>

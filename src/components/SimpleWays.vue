@@ -3,11 +3,11 @@
     class="relative w-full min-h-[600px] flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-700 to-blue-400">
     <!-- Background image with overlay -->
     <img src="/src/assets/img/choose-fam-1.png" alt="Background"
-      class="absolute inset-0 w-full h-full object-cover object-left md:object-center opacity-60 z-0" />
-    <div class="absolute inset-0 bg-gradient-to-b from-[#276FAA] via-transparent to-[#00174F] opacity-90 z-10"></div>
+      class="absolute inset-0 w-full h-full object-cover object-left md:object-center opacity-60" />
+    <div class="absolute inset-0 bg-gradient-to-b from-[#276FAA] via-transparent to-[#00174F] opacity-90"></div>
 
     <div
-      class="relative z-20 container mx-auto flex flex-col md:flex-row items-center justify-center md:justify-between py-12 md:py-24 gap-8 min-h-[600px]">
+      class="relative container mx-auto flex flex-col md:flex-row items-center justify-center md:justify-between py-12 md:py-24 gap-8 min-h-[600px]">
       <div
         class="w-full md:w-2/3 lg:w-1/2 flex flex-col items-center md:items-end justify-center min-h-[400px] mx-auto">
         <h2 class="text-white text-3xl md:text-4xl font-bold mb-8 text-center md:text-right">
@@ -19,7 +19,7 @@
           <transition-group name="slide-fade" tag="div" class="h-full flex flex-col gap-4">
             <div v-for="(item, idx) in visibleItems" :key="item.title"
               class="transition-all duration-700 ease-in-out cursor-pointer flex items-center" :class="[
-                idx === activeRelativeIndex ? 'scale-105 shadow-2xl bg-white text-blue-900 z-20' : 'scale-95 bg-blue-100 text-blue-900/80 z-10',
+                idx === activeRelativeIndex ? 'scale-105 shadow-2xl bg-white text-blue-900' : 'scale-95 bg-blue-100 text-blue-900/80',
                 'rounded-xl px-6 py-5 flex items-start gap-4',
                 idx === activeRelativeIndex ? 'relative' : 'relative opacity-70',
                 idx === activeRelativeIndex ? 'border-4 border-white' : '',
@@ -76,6 +76,8 @@
             </div>
           </transition-group>
         </div>
+
+        
       </div>
     </div>
   </section>

@@ -8,7 +8,7 @@
     <p class="text-gray-700 text-lg mb-8 max-w-xl">
       Support your loved ones effortlessly—FamRemit Money Transfer delivers your funds instantly, safely, and hassle-free.
     </p>
-    <div class="mb-2 text-gray-800 font-medium">Available on</div>
+    <div class="mb-2 text-gray-800 font-medium">Coming Soon</div>
     <div class="flex gap-4">
       <a href="#" class="block"><img src="/src/assets/img/appstore.png" alt="App Store" class="h-12 bg-black p-2 rounded-xl" /></a>
       <a href="#" class="block"><img src="/src/assets/img/googleplay.png" alt="Google Play" class="h-12 bg-black p-2 rounded-xl" /></a>

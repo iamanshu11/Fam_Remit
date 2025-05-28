@@ -10,7 +10,7 @@
         <div class="relative w-full mx-auto">
           <div class="flex items-center justify-center gap-6">
             <!-- Desktop Left Arrow -->
-            <button @click="prev" class="hidden md:flex items-center justify-center w-14 h-14 rounded-full bg-gray-200 hover:bg-blue-100 text-blue-500 absolute left-0 top-1/2 -translate-y-1/2 z-10">
+            <button @click="prev" class="hidden md:flex items-center justify-center w-14 h-14 rounded-full bg-gray-200 hover:bg-blue-100 text-blue-500 absolute left-0 top-1/2 -translate-y-1/2 z-20">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
               </svg>
@@ -21,7 +21,7 @@
               <div class="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
                 <div v-for="(review, idx) in visibleReviews" :key="review.name + idx" class="relative bg-white rounded-2xl shadow-lg p-8 flex flex-col md:flex-row items-center gap-4 min-h-[200px] max-w-xl mx-auto border border-gray-100">
                   <div class="relative flex-shrink-0">
-                    <span class="absolute -left-4 -top-4 w-24 h-24 bg-blue-200 rounded-full z-0"></span>
+                    <span class="absolute -left-4 -top-4 w-24 h-24 bg-blue-200 rounded-full -z-10"></span>
                     <img :src="review.img" alt="Customer" class="w-20 h-20 rounded-full object-cover relative z-10 border-4 border-white" />
                   </div>
                   <div class="flex-1 flex flex-col justify-center">
@@ -43,7 +43,7 @@
             </div>
   
             <!-- Desktop Right Arrow -->
-            <button @click="next" class="hidden md:flex items-center justify-center w-14 h-14 rounded-full bg-gray-200 hover:bg-blue-100 text-blue-500 absolute right-0 top-1/2 -translate-y-1/2 z-10">
+            <button @click="next" class="hidden md:flex items-center justify-center w-14 h-14 rounded-full bg-gray-200 hover:bg-blue-100 text-blue-500 absolute right-0 top-1/2 -translate-y-1/2 z-20">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
               </svg>

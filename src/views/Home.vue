@@ -12,8 +12,8 @@
     <SimpleWays />
     <ReceiveWays />
     <SendSteps />
-    <GetAppSection />
-    <ReviewSlider />
+    <!-- <GetAppSection />
+    <ReviewSlider /> -->
     <FaqSection />
     <FooterSection />
     <img
@@ -31,8 +31,8 @@ import Calculator from '../components/Calculator.vue'
 import SimpleWays from '../components/SimpleWays.vue'
 import ReceiveWays from '../components/ReceiveWays.vue'
 import SendSteps from '../components/SendSteps.vue'
-import GetAppSection from '../components/GetAppSection.vue'
-import ReviewSlider from '../components/ReviewSlider.vue'
+// import GetAppSection from '../components/GetAppSection.vue'
+// import ReviewSlider from '../components/ReviewSlider.vue'
 import FaqSection from '../components/FaqSection.vue'
 import FooterSection from '../components/FooterSection.vue'
 </script>

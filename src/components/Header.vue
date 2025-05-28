@@ -10,7 +10,11 @@
         <router-link to="/" class="text-[#0579D8]  font-medium">Home</router-link>
         <!-- <router-link to="" class="text-gray-600 hover:text-blue-600">About</router-link>
         <router-link to="" class="text-gray-600 hover:text-blue-600">Contact</router-link> -->
-        <router-link to="/signup" class="px-5 py-1 rounded-full border border-[#0579D8] text-[#0579D8] font-medium hover:bg-blue-50 transition">Sign up</router-link>
+        <!-- <router-link to="/signup" class="px-5 py-1 rounded-full border border-[#0579D8] text-[#0579D8] font-medium hover:bg-blue-50 transition">Sign up</router-link> -->
+        <button @click="showForm = true" class="cursor-pointer px-5 py-1 rounded-full border border-[#0579D8] text-[#0579D8] font-medium hover:bg-blue-50 transition">
+          Join The Waitlist
+                </button>
+
       </nav>
       <!-- Mobile menu button -->
       <div class="md:hidden flex items-center">
@@ -30,13 +34,22 @@
       <router-link to="/" class="text-[#0579D8] font-medium">Home</router-link>
       <!-- <router-link to="" class="text-gray-600 hover:text-blue-600">About</router-link>
       <router-link to="" class="text-gray-600 hover:text-blue-600">Contact</router-link> -->
-      <router-link to="/signup" class="px-5 py-1 rounded-full border border-[#0579D8] text-[#0579D8] font-medium hover:bg-blue-50 transition">Sign up</router-link>
+      <button @click="showForm = true" class="cursor-pointer px-5 py-1 rounded-full border border-[#0579D8] text-[#0579D8] font-medium hover:bg-blue-50 transition">
+        Join The Waitlist
+                </button>
     </div>
+
+    <ZohoFormPopup :is-open="showForm" @close="showForm = false" />
   </header>
 </template>
 
 <script setup>
 import { ref } from 'vue'
+
+
+import ZohoFormPopup from './ZohoFormPopup.vue'
+
+const showForm = ref(false)
 
 const menuOpen = ref(false)
 const toggleMenu = () => {
