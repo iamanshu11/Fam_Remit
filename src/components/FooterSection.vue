@@ -8,9 +8,9 @@
           FamRemit Money Transfer has become the leading provider of money remittance services in Eritrea and beyond.
         </p>
         <div class="flex gap-4 mb-4">
-          <a href="#" aria-label="Facebook"><img src="/src/assets/img/facebook.png" class="w-9 h-9 rounded-full" /></a>
-          <a href="#" aria-label="Twitter"><img src="/src/assets/img/twitter.png" class="w-9 h-9 rounded-full" /></a>
-          <a href="#" aria-label="LinkedIn"><img src="/src/assets/img/linkdln.png" class="w-9 h-9 rounded-full" /></a>
+          <a href="" aria-label="Facebook"><img src="/src/assets/img/facebook.png" class="w-9 h-9 rounded-full" /></a>
+          <a href="" aria-label="Twitter"><img src="/src/assets/img/twitter.png" class="w-9 h-9 rounded-full" /></a>
+          <a href="" aria-label="LinkedIn"><img src="/src/assets/img/linkdln.png" class="w-9 h-9 rounded-full" /></a>
         </div>
       </div>
 
@@ -42,17 +42,17 @@
         <ul class="space-y-2">
           <li class="flex items-center">
             <ChevronRightIcon class="w-4 h-4 ml-1 text-cyan-200" />
-            <a href="#" class="hover:underline">Terms & Condition</a>
+            <a href="" class="hover:underline">Terms & Condition</a>
             
           </li>
           <li class="flex items-center">
             <ChevronRightIcon class="w-4 h-4 ml-1 text-cyan-200" />
-            <a href="#" class="hover:underline">Privacy Policy</a>
+            <a href="" class="hover:underline">Privacy Policy</a>
             
           </li>
           <li class="flex items-center">
             <ChevronRightIcon class="w-4 h-4 ml-1 text-cyan-200" />
-            <a href="#" class="hover:underline">Complaint Policy</a>
+            <a href="" class="hover:underline">Complaint Policy</a>
             
           </li>
         </ul>
@@ -65,7 +65,7 @@
           <MapPinIcon class="w-5 h-5 text-cyan-200 mt-1" />
           <div>
             <span class="font-semibold">Location</span><br />
-            <span class="text-sm">33 Brixton Station Road, SW9 8PB, London, United Kingdom.</span>
+            <span class="text-sm">3 Gilbert Street Walgett NSW</span>
           </div>
         </div>
         <div class="mb-2 flex  gap-2">
@@ -75,13 +75,13 @@
           <span class="text-sm ml-2">info@famremit.com</span>
           </div>
         </div>
-        <div class="mb-2 flex  gap-2">
+        <!-- <div class="mb-2 flex  gap-2">
           <PhoneIcon class="w-5 h-5 text-cyan-200" />
           <div>
             <span class="font-semibold">Phone</span><br />
             <span class="text-sm ml-2">+44 (0) 12345666</span>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
 
